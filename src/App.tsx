@@ -6,6 +6,8 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 //   artists: Artist[];
 // }
 
+// test
+
 interface Artist {
   external_urls: ExternalUrls;
   followers: Followers;
