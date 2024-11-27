@@ -1,10 +1,20 @@
+export interface ArtistApiResponse {
+  artists: ArtistResponse; // `artists` 객체를 포함
+}
+
 export interface ArtistResponse {
-  artists: Artist[];
+  href: string; // 검색 결과 API URL
+  limit: number; // 한 번에 가져올 결과 제한 수
+  next: string | null; // 다음 페이지 URL
+  offset: number; // 현재 페이지 오프셋
+  previous: string | null; // 이전 페이지 URL
+  total: number; // 전체 결과 수
+  items: Artist[]; // 아티스트 배열
 }
 
 export interface Artist {
-  external_urls: ExternalUrls;
-  followers: Followers;
+  external_urls: ExternalUrls; // 외부 URL 정보
+  followers: Followers; // 팔로워 정보
   genres: string[]; // 장르 배열
   href: string; // 아티스트에 대한 API URL
   id: string; // 아티스트 ID
