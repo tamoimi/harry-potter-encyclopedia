@@ -15,7 +15,6 @@ const Home = () => {
     enabled: !!query, // query 값이 있을 때만 실행
   });
 
-//test
   const handleSearch = () => {
     setQuery(searchTerm); // 검색 버튼 클릭 시 query 값 설정
   };
