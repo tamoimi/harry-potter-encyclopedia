@@ -22,7 +22,7 @@ const ArtistCard: React.FC<ArtistCardProps> = ({ artist }) => {
         />
       </CardContent>
       <CardFooter>
-        <p>Card Footer</p>
+        <p>Popularity: {artist.popularity}</p>
       </CardFooter>
     </Card>
   );
