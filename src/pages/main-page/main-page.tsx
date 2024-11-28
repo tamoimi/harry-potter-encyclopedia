@@ -24,20 +24,23 @@ const Home = () => {
 
   return (
     <>
-      <div className="flex items-center w-full max-w-sm mb-10 space-x-2">
-        <Input
-          placeholder="Artist"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)} // 사용자 입력 값 업데이트
-        />
-        <Button onClick={handleSearch} type="button">
-          Search
-        </Button>
-      </div>
-      <div className="grid grid-cols-2 gap-4">
-        {data?.artists.items.map((artist) => (
-          <ArtistCard key={artist.id} artist={artist} />
-        ))}
+      <h1 className="mb-5 text-2xl">Tami's spotify app</h1>
+      <div className="flex justify-center">
+        <div className="flex items-center w-full max-w-sm mb-10 space-x-2">
+          <Input
+            placeholder="Artist"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)} // 사용자 입력 값 업데이트
+          />
+          <Button onClick={handleSearch} type="button">
+            Search
+          </Button>
+        </div>
+        <div className="grid grid-cols-2 gap-4">
+          {data?.artists.items.map((artist) => (
+            <ArtistCard key={artist.id} artist={artist} />
+          ))}
+        </div>
       </div>
     </>
   );
