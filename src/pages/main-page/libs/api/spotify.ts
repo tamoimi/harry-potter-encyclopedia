@@ -49,3 +49,21 @@ export const fetchArtists = async (query: string): Promise<ArtistApiResponse> =>
 
   return response.data;
 };
+
+// fetch artist's album
+export const fetchArtistAlbum = async (artistId: string) => {
+  // Access Token 설정
+  if (!spotifyApi.defaults.headers.common["Authorization"]) {
+    await setAccessToken();
+  }
+
+  // Spotify API 요청
+  const response = await spotifyApi.get(`/artists/${artistId}/albums`, {
+    params: {
+      include_groups: "album,single", // 앨범과 싱글만 포함 (옵션)
+      market: "US", // 선택적으로 특정 시장을 지정
+    },
+  });
+
+  return response.data;
+};
